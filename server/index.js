@@ -4,7 +4,14 @@ const cors = require("cors"); // this is cross origin resource sharing its allow
 require("dotenv").config(); // it is used to securely manage sensitive information like database strings, API keys, etc
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      "https://feedback-form-frontend-rd98gc9vj-rohit-deshmukhs-projects.vercel.app", // your frontend URL
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 const Feedback = require("./models/Feedback");

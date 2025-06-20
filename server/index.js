@@ -29,6 +29,10 @@ app.post("/api/feedback", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {

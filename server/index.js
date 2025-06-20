@@ -7,7 +7,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://feedback-form-frontend-rd98gc9vj-rohit-deshmukhs-projects.vercel.app",
+      "https://feedback-form-frontend-brown.vercel.app",
       "http://localhost:5173",
     ],
     methods: ["GET", "POST"],

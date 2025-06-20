@@ -1,7 +1,7 @@
-const express = require("express"); //express simplifies handing HTTP requests, routing, middleware, and server setup in node.js application
-const mongoose = require("mongoose"); //mongoose provides a structured way to interact with MongosDB, allowing you to define schemas and models, validate data, and perform CRUF operations easily
-const cors = require("cors"); // this is cross origin resource sharing its allows your server to accept requests from different origin if frontend is hosted on a different domain than your backend, without it the browers blocks cross origin API calls for security reasons
-require("dotenv").config(); // it is used to securely manage sensitive information like database strings, API keys, etc
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 app.use(
@@ -37,7 +37,8 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected");
-    // Remove port 5000 for Vercel deployment
-    app.listen(process.env.PORT || 5000, () => console.log("server started"));
+    // Do NOT call app.listen on Vercel
   })
   .catch((err) => console.log(err));
+
+module.exports = app;

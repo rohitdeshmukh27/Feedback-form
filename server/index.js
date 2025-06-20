@@ -6,8 +6,10 @@ require("dotenv").config(); // it is used to securely manage sensitive informati
 const app = express();
 app.use(
   cors({
-    origin:
+    origin: [
       "https://feedback-form-frontend-rd98gc9vj-rohit-deshmukhs-projects.vercel.app",
+      "http://localhost:5173",
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   })

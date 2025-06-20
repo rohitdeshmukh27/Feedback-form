@@ -6,10 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(
   cors({
-    origin: [
-      "https://online-feedback-form.vercel.app",
-      "http://localhost:5173",
-    ],
+    origin: "https://online-feedback-form.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   })

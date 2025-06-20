@@ -37,6 +37,7 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected");
-    app.listen(5000, () => console.log("server started on port 5000"));
+    // Remove port 5000 for Vercel deployment
+    app.listen(process.env.PORT || 5000, () => console.log("server started"));
   })
   .catch((err) => console.log(err));

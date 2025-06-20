@@ -17,7 +17,7 @@ function App() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/feedback"`,
+        `${import.meta.env.VITE_API_URL}/api/feedback`,
         formData
       );
       setStatus(res.data.message);

@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(
   cors({
-    origin: "https://online-feedback-form.vercel.app",
+    origin: "https://feedback-form-seven-wheat.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   })
